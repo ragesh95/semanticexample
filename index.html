@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="../dist/semantic.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-compat/3.0.0-alpha1/jquery.min.js"></script>
+	<script src="../dist/semantic.min.js"></script>
+	<title>Semantic Example</title>
+</head>
+<body>
+	<div class="ui labeled icon menu">
+		<div class="active column item"><i class="teal large home icon"></i>Home</div>
+		<div class="column item"><i class="teal large calculator icon"></i>Apps</div>
+		<div class="column item"><i class="teal large write icon"></i>Services</div>
+		<div class="column item"><i class="teal large call icon"></i>Contact</div>
+		<div class="column right item"><i class="teal large info icon"></i>About</div>
+	</div>
+	<div class="ui blurring container">
+		<div class="ui grid">
+			<div class="two wide column">
+				<img src="http://uniqsofts.com/gallery_gen/d5ed149dd100fde7ed29ae5f5b062ccc_94x94.png" id="imageone"/>
+			</div>
+			<div class="ui fourteen wide column"><h1>What's new?</h1></div>
+			<div class="ui page dimmer">
+			<div class="fourteen wide column">
+				<div class="ui styled fluid accordion">
+					<div class="title">
+						<h3 class="ui header">
+								<i class="dropdown icon"></i>
+								What's new?
+						</h3>
+					</div>
+					<span class="content">
+						<p>Whats new,Whats new,Whats new,Whats new,Whats new,Whats new,Whats new,Whats new,Whats new,Whats new,Whats new</p>
+						<span class="ui menu"><span class="right item"><button class="ui button" id="buttonclose">close</button></span></span>
+					</span>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$('.ui.accordion').accordion();
+		$('#imageone').click(function(){ $('.ui.dimmer').dimmer("show") });
+		$('#buttonclose').click(function(){ $('.ui.dimmer').dimmer("hide") });
+	</script>
+</body>
+</html>
