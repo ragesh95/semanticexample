@@ -17,6 +17,18 @@
 		<div class="column item"><i class="teal large call icon"></i>Contact</div>
 		<div class="column right item"><i class="teal large info icon"></i>About</div>
 	</div>
+	<div class="ui sidebar inverted top menu">
+		<div class="item">home</div>
+		<div class="item">Apps</div>
+		<div class="item">Contact</div>
+		<div class="item">About</div>
+	</div>
+	<div class="ui menu">
+		<a class="item" id="clickablemenu">
+			<i class="sidebar icon"></i>
+			Menu
+		</a>
+	</div>
 	<div class="ui blurring container">
 		<div class="ui grid">
 			<div class="two wide column">
@@ -40,11 +52,66 @@
 			</div>
 			</div>
 		</div>
+		<div class="ui modal">
+			<i class="close icon"></i>
+			<h1 class="header">Loren epsum</h1>
+			<div class="content">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate repellendus asperiores, ut pariatur quis, est culpa, dolor odit porro voluptatibus totam, nobis cum ipsum temporibus harum qui reiciendis quia ad.</p>
+				<div class="extra ui dimmer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus dolorum, maxime facere, dicta quisquam non. Sit odio aliquid quidem velit, consectetur, molestiae earum accusantium, facere modi exercitationem eligendi nemo consequatur.</div>
+			</div>
+			<div class="actions">
+				<button class="ui green approve button">Positive</button>
+				<button class="ui red cancel button">Cancel</button>
+				<button class="ui yellow button" id="togglebutton">Toggle</button>
+			</div>
+		</div>
+		<select class="ui multiple selection dropdown" id="course">
+			<option value="C">C</option>
+			<option value="C++">C++</option>
+			<option value="java">java</option>
+			<option value="html">HTML</option>
+			<option value="html">CSS</option>
+		</select>
+		<div class="ui shape">
+			<div class="sides">
+				<div class="active side">
+					<div class="ui raised segment">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, officiis itaque aliquam atque provident at laudantium autem quidem expedita delectus libero quasi mollitia, rerum rem in reiciendis sit eum sed.
+					</div>
+				</div>
+				<div class="side">
+					<div class="ui raised segment">
+						Ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, officiis itaque aliquam atque provident at laudantium autem quidem expedita delectus libero quasi mollitia, rerum rem in reiciendis sit eum sed.
+					</div>
+				</div>
+				<div class="side">
+					<div class="ui raised segment">
+						Dolor sit amet, consectetur adipisicing elit. Cupiditate, officiis itaque aliquam atque provident at laudantium autem quidem expedita delectus libero quasi mollitia, rerum rem in reiciendis sit eum sed.
+					</div>
+				</div>
+				<div class="side">
+					<div class="ui raised segment">
+						Sit amet, consectetur adipisicing elit. Cupiditate, officiis itaque aliquam atque provident at laudantium autem quidem expedita delectus libero quasi mollitia, rerum rem in reiciendis sit eum sed.
+					</div>
+				</div>
+				<div class="side">
+					<div class="ui raised segment">
+						Amet, consectetur adipisicing elit. Cupiditate, officiis itaque aliquam atque provident at laudantium autem quidem expedita delectus libero quasi mollitia, rerum rem in reiciendis sit eum sed.
+					</div>
+				</div>
+			</div>
+		</div>
+		<button class="ui teal button" id="flipbutton">Flip</button>
 	</div>
 	<script>
 		$('.ui.accordion').accordion();
 		$('#imageone').click(function(){ $('.ui.dimmer').dimmer("show") });
 		$('#buttonclose').click(function(){ $('.ui.dimmer').dimmer("hide") });
+		$('.ui.modal').modal('show');
+		$('#togglebutton').click(function(){ $('.extra.ui.dimmer').dimmer("toggle") });
+		$('#course').dropdown();
+		$('#clickablemenu').click(function(){ $('.ui.sidebar').sidebar('toggle'); });
+		$('#flipbutton').click(function(){ $('.ui.shape').shape('flip up') });
 	</script>
 </body>
 </html>
