@@ -102,8 +102,70 @@
 			</div>
 		</div>
 		<button class="ui teal button" id="flipbutton">Flip</button>
+		<div class="ui grid">
+			<div class="four wide column">
+				<h1 class="header">
+					Inbuilt search:
+				</h1>
+			</div>
+			<div class="twelve wide column">
+				<div class="extra1 ui search">
+					<input type="text" class="prompt" placeholder="Search..">
+					<div class="results"></div>
+				</div>
+			</div>
+		</div>
+		<div class="ui grid">
+			<div class="four wide column">
+				<h1 class="header">
+					External search:
+				</h1>
+			</div>
+			<div class="twelve wide column">
+				<div class="extra2 ui search">
+					<input type="text" class="prompt" placeholder="Search..">
+					<div class="results"></div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<script>
+		var content=[
+			{
+				title:"google",
+				description:"search engine",
+				url:"http://google.com"
+			},
+			{
+				title:"yahoo",
+				description:"search engine",
+				url:"http://yahoo.com"
+			},
+			{
+				title:"fb",
+				description:"chat engine",
+				url:"http://fb.com"
+			},
+			{
+				title:"twitter",
+				description:"social engine",
+				url:"http://twitter.com"
+			}
+		];
+		$('.extra1.ui.search').search({
+			source:content,
+			searchFullText:false
+		});
+		$('.extra2.ui.search').search({
+			apiSettings: {
+				url: "https://api.github.com/search/repositories?q={query}"
+			},
+			fields: {
+				results: 'items',
+				title: 'name',
+				url: 'html_url'
+			}
+		});
 		$('.ui.accordion').accordion();
 		$('#imageone').click(function(){ $('.ui.dimmer').dimmer("show") });
 		$('#buttonclose').click(function(){ $('.ui.dimmer').dimmer("hide") });
@@ -111,7 +173,7 @@
 		$('#togglebutton').click(function(){ $('.extra.ui.dimmer').dimmer("toggle") });
 		$('#course').dropdown();
 		$('#clickablemenu').click(function(){ $('.ui.sidebar').sidebar('toggle'); });
-		$('#flipbutton').click(function(){ $('.ui.shape').shape('flip up') });
+		$('#flipbutton').click(function(){ $('.ui.shape').shape('flip left');$('.active.side').transition('fade up'); });
 	</script>
 </body>
 </html>
